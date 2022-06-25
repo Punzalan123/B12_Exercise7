@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Checkout Form</title>
+    <style>
+        #diag {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0%;
+            right: 0%;
+            background-color: #b7b7b7;
+            opacity: 0.7;
+            z-index: 9999;
+        }
+
+        #digbx {
+            display: none;
+            position: fixed;
+            width: 50%;
+            /* height: 25%; */
+            margin-left: 25%;
+            z-index: 9999;
+            border-radius: 15px;
+            background-color: white;
+        }
+        #bxh {
+            background-color: rgb(0, 122, 51);
+            color: white;
+            font-size: 30px;
+            padding: 10px;
+            margin: 10px 10px 0px 10px;
+
+        }
+        #bxb {
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            padding: 10px 10px 0px 10px;
+            margin: 0px 10px 0px 10px;
+        }
+        #bxp {
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            padding: 0px 10px 10px 10px;
+            margin: 0px 10px 10px 10px;
+        }
+
+
+
+    </style>
+</head>
+<body class="bg-success">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <h1 class="display-3 mt-5 text-center text-white fw-bold">Checkout form</h1>
+    <div id="diag"></div>
+    <div class="" id="digbx">
+        <div class="text-center fw-bold" id="bxh">Order Details</div>
+        <div id="bxb"></div>
+        <div id="bxp"></div>
+        <div class="text-center mb-3"><button class="btn btn-info" onclick="reld()">Done</button></div>
+    </div>
+    <div class="container">
+        <form action="" class="row w-75 m-auto" >
+            <div class="col-6">
+                <label for="FirstName" class="form-label fw-bold fs-5">FirstName</label>
+                <input type="text" class="form-control" name="FirstName" id="firstN" placeholder="Enter Firstname" required>
+            </div>
+            <div class="col-6">
+                <label for="LastName" class="form-label fw-bold fs-5">LastName</label>
+                <input type="text" class="form-control" name="LastName" id="lastN" placeholder="Enter Lastname" required>
+            </div>
+            <div class="col-sm-12 mt-2">
+                <label for="adress" class="form-label fw-bold fs-5">Address</label>
+                <input type="text" class="form-control" name="adress" id="add" placeholder="Enter Address" required>
+            </div>
+            <div>
+                <label for="reg" class="form-label mt-2 fw-bold fs-5">Region</label>
+                <select name="reg" id="reg" class="form-select" required>
+                    <option value="">Select Region</option>
+                    <option value="NCR">NCR</option>
+                    <option value="CAR">CAR</option>
+                    <option value="Ilocos Region">Ilocos Region</option>
+                    <option value="Cagayan Valley">Cagayan Valley</option>
+                    <option value="Central Luzon">Central Luzon</option>
+                    <option value="Calabarzon">Calabarzon</option>
+                    <option value="Mimaropa">Mimaropa</option>
+                    <option value="Bicol Region">Bicol Region</option>
+                    <option value="Western Visayas">Western Visayas</option>
+                    <option value="Central Visayas">Central Visayas</option>
+                    <option value="Eastern Visayas">Eastern Visayas</option>
+                    <option value="Zamboanga Peninsula">Zamboanga Peninsula</option>
+                    <option value="Northern Mindanao">Northern Mindanao</option>
+                    <option value="Davao Region">Davao Region</option>
+                    <option value="Soccsksargen">Soccsksargen</option>   
+                </select>
+            </div>
+            <div>
+                <label for="num" class="mt-2 fw-bold fs-5">Contact Number</label>
+                <input type="number" name="num" id="num" class="form-control" placeholder="Ex. 09746133164" required>
+            </div>
+            <div class="col-12 ms-3">
+                <label for="pay" class="form-label mt-2 fw-bold fs-5">Payment Method</label>
+            </div>
+            <div class="col-12 ms-3">    
+                <input type="radio" name="pay" value="Cash on Delivery" class="form-check-input" onclick="getR('Cash on Delivery')">
+                <label for="pay" class="form-label fw-bold">Cash on Delivery</label>
+            </div>    
+            <div class="col-12 ms-3">    
+                <input type="radio" name="pay" value="American Express" class="form-check-input" onclick="getR('American Express')">
+                <label for="pay" class="form-label fw-bold">American Express</label>
+            </div>
+            <div class="col-12 ms-3">    
+                <input type="radio" name="pay" value="MasterCard" class="form-check-input" onclick="getR('MasterCard')">
+                <label for="pay" class="form-label fw-bold">MasterCard</label>
+            </div>
+            <div class="col-12 ms-3">    
+                <input type="radio" name="pay" value="Visa" class="form-check-input" onclick="getR('Visa')">
+                <label for="pay" class="form-label fw-bold">Visa</label>
+            </div>
+            
+
+        </form>    
+        <div class="col-12 text-center">
+            <button class="btn btn-info mt-3 mb-5" onclick="getF()">Place Order</button>
+        </div>
+    </div>
+    <script>
+        function getF() {
+            alert("Confirm Order?");
+            wit = document.getElementById("diag");
+            bx = document.getElementById("digbx");
+            wit.style.display = "block";
+            bx.style.display = "block";
+
+            fir = document.getElementById("firstN").value;
+            las = document.getElementById("lastN").value;
+            ful = "<h3> Full Name: " + fir + " " +las + "<br>";
+            ad = "<h3> Address: " + " " + document.getElementById("add").value + "<br>";
+            re = "<h3> Region: " + document.getElementById("reg").value + "<br>";
+            con = "<h3> Contact Number: " + document.getElementById("num").value + "<br>";
+
+            document.getElementById("bxb").innerHTML = ful + ad + re + con;
+        }
+        function  reld() {
+            wit = document.getElementById("diag");
+            bx = document.getElementById("digbx");
+            wit.style.display = "none";
+            bx.style.display = "none";
+        } 
+        function getR(paym) {
+            document.getElementById("bxp").innerHTML = "<h3> Payment Method: " + paym ;
+        }
+    </script>
+</body>
+</html>
